@@ -18,9 +18,9 @@ import static org.junit.Assert.assertTrue;
 
 public class FileReaderTest {
 
-    private final static Path TEST_FILE = Path.of("src/test/resources/test.txt");
-    private final static Path READER_CLASS = Path.of("src/main/java/com/epam/mjc/nio/FileReader.java");
-    private final static String SOURCE_CODE_LOCATION = "src/main/java";
+    private static final Path TEST_FILE = Path.of("src/test/resources/test.txt");
+    private static final Path READER_CLASS = Path.of("src/main/java/com/epam/mjc/nio/FileReader.java");
+    private static final String SOURCE_CODE_LOCATION = "src/main/java";
     private static Profile profile;
 
     @BeforeClass
