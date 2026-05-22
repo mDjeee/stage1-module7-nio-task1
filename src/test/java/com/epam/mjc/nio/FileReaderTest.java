@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Random;
 
 
 import static org.junit.Assert.assertEquals;
@@ -26,7 +27,8 @@ public class FileReaderTest {
     @BeforeClass
     public static void setup() {
         String randomString = RandomStringUtils.randomAlphabetic(5);
-        Integer randomInt = getRandomInt(1, 20);
+        Random random = new Random();
+        Integer randomInt = random.nextInt(20) + 1;
         profile = new Profile(randomString, randomInt, randomString, randomInt.longValue());
         createTestFile(randomString, randomInt);
     }
@@ -83,10 +85,6 @@ public class FileReaderTest {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public static int getRandomInt(int min, int max) {
-        return (int) ((Math.random() * (max - min)) + min);
     }
 
     public static void createTestFile(String randomString, Integer randomInt) {
